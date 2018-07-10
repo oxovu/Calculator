@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-0v-S58">
-                                <rect key="frame" x="20" y="25" width="280" height="110"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-0v-S58">
+                                <rect key="frame" x="20" y="25" width="280" height="80"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="70"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -194,7 +194,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="operations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sj-gL-jGX"/>
+                                            <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TeW-ky-jL7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atl-nG-ALR">
@@ -205,7 +205,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="operations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Fa-cF-kb0"/>
+                                            <action selector="plusMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qla-k4-4A2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6R-V7-ulb">
