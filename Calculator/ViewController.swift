@@ -81,7 +81,7 @@ class ViewController: UIViewController {
                 result.text = String(numberOnScreen)
             }
         } else if sender.tag == 11 {
-            result.text = ""
+            result.text = "0"
             previousNumber = 0
             numberOnScreen = 0
             operation = 0
