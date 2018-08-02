@@ -95,7 +95,7 @@ class ViewController: UIViewController {
     
     @IBAction func operations(_ sender: UIButton) { // сделать, чтобы при нескольких нажатиях на операторы, выводился промежуточный результат
         var powOnScreen:Int = 0
-        var charsAfterPoint:Int? = 5
+        var charsAfterPoint:Int = 1
         dot = false
         if result.text != "" && sender.tag != 11 && sender.tag != 18 && sender.tag != 12 && sender.tag != 13 {
             operation = sender.tag
@@ -120,13 +120,13 @@ class ViewController: UIViewController {
                 while numberOnScreen >= pow(10, 1) {
                     powOnScreen += 1
                     if (numberOnScreen.truncatingRemainder(dividingBy: 10)) != 0 {
-                        charsAfterPoint! += 1
+                        charsAfterPoint += 1
                     }
                     numberOnScreen = numberOnScreen / 10
                 }
             }
-            if numberOnScreen < pow(10, -9) {
-                charsAfterPoint = 5
+            if numberOnScreen < pow(10, -6) {
+                charsAfterPoint = 6
                 while numberOnScreen < 1 {
                     powOnScreen -= 1
 //                    if (numberOnScreen.truncatingRemainder(dividingBy: 10)) != 0 {
@@ -142,26 +142,16 @@ class ViewController: UIViewController {
                     result.text = result.text! + "e" + String(powOnScreen) //почему он печатате е-08?!
                 }
             } else{
-                if charsAfterPoint != nil && charsAfterPoint! > 5 {
-                    charsAfterPoint = 5
+                 charsAfterPoint = String(numberOnScreen.truncatingRemainder(dividingBy: 1)).count - 2
+                if charsAfterPoint > 6 {
+                    charsAfterPoint = 6
                 }
-                if charsAfterPoint == 5 {
-                    for i in 0...4 {
-                        if String(numberOnScreen)[String(numberOnScreen).index(String(numberOnScreen).startIndex, offsetBy: 4 - i)] == "0" {
-                            charsAfterPoint! -= 1
-                        }
-                    }
-                }
-                if charsAfterPoint == nil {
-                    result.text = String(numberOnScreen)
-                } else {
                     let stringFormat = "%.0" + String(describing: charsAfterPoint) + "f"  //странно выводится если все 9 умножить на что-то близкое ко всем 9
                     result.text = String(format: stringFormat, numberOnScreen) // это изза округления
                     if powOnScreen != 0 {
                         result.text = result.text! + "e" + String(powOnScreen)
                     }
                 }
-            }
         }
         if result.text == String(666){
             back.backgroundColor = UIColor(red: 0.9, green: 0.2, blue: 0.2, alpha: 1.0)
