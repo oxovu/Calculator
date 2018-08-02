@@ -125,13 +125,10 @@ class ViewController: UIViewController {
                     numberOnScreen = numberOnScreen / 10
                 }
             }
-            if numberOnScreen < pow(10, -6) {
-                charsAfterPoint = 6
+            if numberOnScreen < pow(10, -5) {
+                charsAfterPoint = 5
                 while numberOnScreen < 1 {
                     powOnScreen -= 1
-//                    if (numberOnScreen.truncatingRemainder(dividingBy: 10)) != 0 {
-//                        charsAfterPoint += 1
-//                    }
                     numberOnScreen = numberOnScreen * 10
                 }
             }
@@ -139,19 +136,19 @@ class ViewController: UIViewController {
                 intNumberOnScreen = Int(numberOnScreen)
                 result.text = String(intNumberOnScreen)
                 if powOnScreen != 0 {
-                    result.text = result.text! + "e" + String(powOnScreen) //почему он печатате е-08?!
+                    result.text = result.text! + "e" + String(powOnScreen)
                 }
-            } else{
+            } else {
                  charsAfterPoint = String(numberOnScreen.truncatingRemainder(dividingBy: 1)).count - 2
-                if charsAfterPoint > 6 {
-                    charsAfterPoint = 6
+                if charsAfterPoint > 5 {
+                    charsAfterPoint = 5
                 }
-                    let stringFormat = "%.0" + String(describing: charsAfterPoint) + "f"  //странно выводится если все 9 умножить на что-то близкое ко всем 9
-                    result.text = String(format: stringFormat, numberOnScreen) // это изза округления
-                    if powOnScreen != 0 {
-                        result.text = result.text! + "e" + String(powOnScreen)
-                    }
+                let stringFormat = "%.0" + String(describing: charsAfterPoint) + "f"  //странно выводится если все 9 умножить на что-то близкое ко всем 9
+                result.text = String(format: stringFormat, numberOnScreen) // это изза округления
+                if powOnScreen != 0 {
+                    result.text = result.text! + "e" + String(powOnScreen)
                 }
+            }
         }
         if result.text == String(666){
             back.backgroundColor = UIColor(red: 0.9, green: 0.2, blue: 0.2, alpha: 1.0)
